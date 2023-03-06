@@ -1,5 +1,5 @@
 /**
- The ConsoleLogger class implements the ILogger interface for logging messages to the console.
+ * The ConsoleLogger class implements the ILogger interface for logging messages to the console.
  */
 
 package logging;

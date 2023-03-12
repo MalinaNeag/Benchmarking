@@ -1,9 +1,8 @@
+package logging;
+
 /**
  * The ConsoleLogger class implements the ILogger interface for logging messages to the console.
  */
-
-package logging;
-
 public class ConsoleLogger implements ILogger {
 
     /**
@@ -44,5 +43,50 @@ public class ConsoleLogger implements ILogger {
     @Override
     public void close() {
         //do nothing
+    }
+
+
+    /**
+     * Converts the received value in nanoseconds and prints it in the desired unit
+     * @param value The value to be converted and written
+     * @param unit The desired unit of the value
+     */
+
+    @Override
+    public void writeTime(long value, TimeUnit unit) {
+        switch (unit) {
+            case Nano -> System.out.println("Finished in " + value + " " + unit);
+            case Micro -> System.out.println("Finished in " + value * Math.pow(10, -3) + " " + unit);
+            case Milli -> System.out.println("Finished in " + value * Math.pow(10, -6) + " " + unit);
+            case Sec -> System.out.println("Finished in " + value * Math.pow(10, -9) + " " + unit);
+        }
+    }
+
+    /**
+     * Converts the received value in nanoseconds and prints it in the desired unit, along with a given string
+     * @param string The string to be written before the value
+     * @param value The value to be converted and written
+     * @param unit The desired unit of the value
+     */
+    @Override
+    public void writeTime(String string, long value, TimeUnit unit) {
+        switch (unit) {
+            case Nano -> System.out.println(string + value + " " + unit);
+            case Micro -> System.out.println(string + value * Math.pow(10, -3) + " " + unit);
+            case Milli -> System.out.println(string + value * Math.pow(10, -6) + " " + unit);
+            case Sec -> System.out.println(string + value * Math.pow(10, -9) + " " + unit);
+        }
+    }
+}
+
+/**
+ * Provides a test for ConsoleLogger class
+ */
+class ConsoleTesting {
+    public static void main(String[] args) {
+        ConsoleLogger logger = new ConsoleLogger();
+        logger.write("Hello ");
+        logger.write(1);
+        logger.close();
     }
 }

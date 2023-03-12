@@ -79,4 +79,24 @@ public class FileLogger implements ILogger{
             e.printStackTrace();
         }
     }
+
+    /**
+     * This method is not implemented for this class yet.
+     * @param value the value to write
+     * @param unit the time unit to use
+     */
+    public void writeTime(long value, TimeUnit unit){
+        //throw new UnsupportedOperationException("This method is not implemented for this class.");
+    }
+
+    /**
+     * This method is not implemented for this class yet.
+     * @param string the string to write
+     * @param value the value to write
+     * @param unit the time unit to use
+     */
+    public void writeTime(String string, long value, TimeUnit unit){
+        //throw new UnsupportedOperationException("This method is not implemented for this class.");
+    }
 }
+

@@ -59,6 +59,11 @@ public class SleepBenchmark implements IBenchmark {
 
     }
 
+    @Override
+    public void warmUp() {
+
+    }
+
 }
 
 /**

@@ -58,4 +58,9 @@ public class DemoBenchmark implements IBenchmark {
     public void cancel() {
 
     }
+
+    @Override
+    public void warmUp() {
+
+    }
 }

@@ -8,7 +8,7 @@ import timing.Timer;
 import logging.ConsoleLogger;
 import timing.ITimer;
 
-public class Testbench {
+public class TestDemoBenchmark {
     public static void main(String[] args) {
         ITimer timer = new Timer();
         ILogger log = new ConsoleLogger();
@@ -17,7 +17,7 @@ public class Testbench {
         final int workload = 10000;
         TimeUnit timeUnit = TimeUnit.Sec;
         bench.initialize(workload);
-        for (int i = 0; i < 12; i++){
+        for (int i = 0; i < 12; i++) {
             timer.resume();
             bench.run();
             long time = timer.pause();
@@ -25,14 +25,5 @@ public class Testbench {
             //log.write("Run " + i + ": ", time);
         }
         log.writeTime(timer.stop(), timeUnit);
-        /* timer.start();
-        bench.run();
-        long time = timer.stop();
-
-        log.write("Finished in ", time, "ns");
-        log.close();
-        bench.clean();
-         */
     }
-
 }

@@ -15,7 +15,7 @@ public interface IBenchmark {
      *
      * @param params The parameters to use for the benchmark.
      */
-    void run(Object ...params);
+    void run(Object ...params) throws IllegalAccessException;
 
     /**
      * Initializes the benchmark with the specified parameters.
@@ -33,4 +33,6 @@ public interface IBenchmark {
      * Cancels the benchmark, stopping any currently running process.
      */
     void cancel();
+
+    void warmUp();
 }
